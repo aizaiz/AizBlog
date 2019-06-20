@@ -1,24 +1,22 @@
 module.exports = {
   root: true,
+  plugins: ['@typescript-eslint'],
   env: {
     browser: true,
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    ecmaFeatures: {
+      legacyDecorators: true
+    }
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/recommended',
-    'plugin:prettier/recommended',
-    'prettier',
-    'prettier/vue'
-  ],
-  plugins: [
-    'prettier'
+    'plugin:nuxt/recommended'
   ],
   // add your custom rules here
   rules: {
-    'nuxt/no-cjs-in-config': 'off'
+    '@typescript-eslint/no-unused-vars': 'error'
   }
 }
